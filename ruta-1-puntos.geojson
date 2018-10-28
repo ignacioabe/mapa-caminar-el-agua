@@ -8,6 +8,7 @@
         },
         "properties": {
             "name": "PUNTO 3: CAMINAR EL AGUA",
+            "marker-symbol": "beer-15",
             "description": "PLAYA DE MADRID, Zona con infraestructura deportiva y de descanso, actualmente en desuso / construcción año 1931. "
         }
     }, {
@@ -18,6 +19,7 @@
         },
         "properties": {
             "name": "PUNTO 6 : ANTONIO BOLINCHES",
+            "marker-symbol": "square-15",
             "description": "Estación regeneradora de aguas residuales Viveros de la Villa: Charla explicativa sobre el funcionamiento de la depuradora de aguas. "
         }
     }, {

@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Recorrido invernal por la reserva Mocho Choshuenco</title>
+    <title>Caminar el agua, ruta río Manzanares norte</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -34,9 +34,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWduYWNpb2FiZSIsImEiOiJsTDV0dWFJIn0.Og513NMky
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/ignacioabe/cjhqrbrrk5d712snwuod7rnj5',
-    center: [-72.1376,-40.0224], //ubicación
-    zoom: 10
+    style: 'mapbox://styles/ignacioabe/cjnscz0aa0fud2slrii5vrocj',
+    center: [-3.7441921, 40.4500822], //ubicación: Madrid, España
+    zoom: 13
 });
 
 //CONTROLES
@@ -66,7 +66,7 @@ map.addControl(geoloc, "top-left");
 
 map.on('load', function () {
 
-    map.addSource('recorrido', { type: 'geojson', data: "./ladera-sur-ruta.geojson" });
+    map.addSource('recorrido', { type: 'geojson', data: "./ruta-1-senderos.geojson" });
     map.addLayer({
         "id": "recorrido",
         "type": "line",
@@ -77,12 +77,12 @@ map.on('load', function () {
         },
         "paint": {
             "line-color": "#a00",
-            "line-width": 3,
+            "line-width": 2,
             "line-opacity": 0.8
         }
     });
 
-    map.addSource('puntos', { type: 'geojson', data: "./ladera-sur-puntos.geojson" });
+    map.addSource('puntos', { type: 'geojson', data: "./ruta-1-puntos.geojson" });
     map.addLayer({
         "id": "puntos",
         "type": "symbol",
@@ -94,7 +94,7 @@ map.on('load', function () {
     });
 
     // When a click event occurs on a feature in the puntos layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
+    // location of the feature, with description HTML from its properties._
     map.on('click', 'puntos', function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
