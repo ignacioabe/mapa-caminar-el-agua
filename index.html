@@ -85,11 +85,16 @@ map.on('load', function () {
     map.addSource('puntos', { type: 'geojson', data: "./ruta-1-puntos.geojson" });
     map.addLayer({
         "id": "puntos",
-        "type": "symbol",
+        "type": "circle",
         "source": "puntos",
         "layout": {
-            "icon-image": "{marker-symbol}-15",
-            "icon-allow-overlap": true
+            // "icon-image": "castle-15",
+            // "icon-allow-overlap": true
+        },
+        "paint": {
+            'circle-radius': 8,
+            'circle-color': '#a00',
+            'circle-opacity': 0.75
         }
     });
 
