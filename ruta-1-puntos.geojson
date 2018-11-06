@@ -1,116 +1,192 @@
 {
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7525177, 40.4723509, 0]
-        },
-        "properties": {
-            "name": "PUNTO 3: CAMINAR EL AGUA",
-            "marker-symbol": "beer-15",
-            "description": "PLAYA DE MADRID, Zona con infraestructura deportiva y de descanso, actualmente en desuso / construcción año 1931. "
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7441921, 40.4500822, 0]
-        },
-        "properties": {
-            "name": "PUNTO 6 : ANTONIO BOLINCHES",
-            "marker-symbol": "square-15",
-            "description": "Estación regeneradora de aguas residuales Viveros de la Villa: Charla explicativa sobre el funcionamiento de la depuradora de aguas. "
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7534082, 40.4690943, 0]
-        },
-        "properties": {
-            "name": "PUNTO 4: CAMINAR EL AGUA",
-            "description": "PRESA DE LA PLAYA DE MADRID, Presa para embalsar aguas de la Playa de Madrid // Actualmente en desuso"
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7500286, 40.4625888, 0]
-        },
-        "properties": {
-            "name": "PUNTO PARA COMIDA Y BAÑO",
-            "description": "PARQUE SINDICAL : Comida y Baño"
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7403619, 40.439035, 0]
-        },
-        "properties": {
-            "name": "PUNTO 7 : CAMINAR EL AGUA",
-            "description": "Pasarela de la Muerte: Explicación de este punto emblemático de la ciudad. http://www.gefrema.com/"
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7262374, 40.4179316, 0]
-        },
-        "properties": {
-            "name": "PUNTO FINAL : JAVIER MALO DE MOLINA / GINÉS GARRIDO *por confirmar",
-            "description": "Perfil histórico de la ciudad, explicación del proyecto Madrid Río. Final de la ruta. Conclusiones."
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7626219, 40.499332, 0]
-        },
-        "properties": {
-            "name": "PUNTO 1 : CAMINAR EL AGUA",
-            "description": "ENCUENTRO, Presentación del proyecto Caminar El Agua y de la ruta que se va a realizar"
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7530306, 40.4651843, 0]
-        },
-        "properties": {
-            "name": "PUNTO 5 : GABRIEL MEZGER",
-            "description": "Vegetación de ribera y Aves"
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.732754, 40.4292124, 0]
-        },
-        "properties": {
-            "name": "PUNTO 8: JUAN GARCÍA *por confirmar",
-            "description": "Proyecto de Renaturalización del Río. Apertura de compuertas, retirada de la escollera, río más natural. Aparición de nueva fauna."
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7257854, 40.4234204, 0]
-        },
-        "properties": {
-            "name": "PUNTO 10 : MANUEL BENITO *por confirmar",
-            "description": "ARROYOS Y CAUCES HISTÓRICOS DE MADRID, Charla sobre los cauces y arroyos históricos en la conformación de la ciudad de Madrid."
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-3.7583638, 40.4944545, 0]
-        },
-        "properties": {
-            "name": "PUNTO 2 : CONFEDERACIÓN HIDROGRÁFICA DEL TAJO",
-            "description": "Zona de Restauración fluvial del río Manzanares en El Pardo por la Confederación Hidrográfica del Tajo. Proyecto de reapertura de las márgenes del río en esta zona, que hoy se encuentran apropiados por clubes privados."
-        }
-    }]
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7525177,
+          40.4723509,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 3: CAMINAR EL AGUA",
+        "marker-color": "#DD0969",
+        "description": "PLAYA DE MADRID, Zona con infraestructura deportiva y de descanso, actualmente en desuso / construcción año 1931. ",
+        "numero": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7441921,
+          40.4500822,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 6 : ANTONIO BOLINCHES",
+        "marker-color": "#DD0969",
+        "description": "Estación regeneradora de aguas residuales Viveros de la Villa: Charla explicativa sobre el funcionamiento de la depuradora de aguas. ",
+        "numero": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7534082,
+          40.4690943,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 4: CAMINAR EL AGUA",
+        "marker-color": "#DD0969",
+        "description": "PRESA DE LA PLAYA DE MADRID, Presa para embalsar aguas de la Playa de Madrid // Actualmente en desuso",
+        "numero": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7500286,
+          40.4625888,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO PARA COMIDA Y BAÑO",
+        "marker-color": "#07AD9B",
+        "description": "PARQUE SINDICAL : Comida y Baño",
+        "numero": "B"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7403619,
+          40.439035,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 7 : CAMINAR EL AGUA",
+        "marker-color": "#DD0969",
+        "description": "Pasarela de la Muerte: Explicación de este punto emblemático de la ciudad. http://www.gefrema.com/",
+        "numero": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7262374,
+          40.4179316,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO FINAL : JAVIER MALO DE MOLINA / GINÉS GARRIDO *por confirmar",
+        "marker-color": "#DD0969",
+        "description": "Perfil histórico de la ciudad, explicación del proyecto Madrid Río. Final de la ruta. Conclusiones.",
+        "numero": "F"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7626219,
+          40.499332,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 1 : CAMINAR EL AGUA",
+        "marker-color": "#DD0969",
+        "description": "ENCUENTRO, Presentación del proyecto Caminar El Agua y de la ruta que se va a realizar",
+        "numero": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7530306,
+          40.4651843,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 5 : GABRIEL MEZGER",
+        "marker-color": "#DD0969",
+        "description": "Vegetación de ribera y Aves",
+        "numero": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.732754,
+          40.4292124,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 8: JUAN GARCÍA *por confirmar",
+        "marker-color": "#DD0969",
+        "description": "Proyecto de Renaturalización del Río. Apertura de compuertas, retirada de la escollera, río más natural. Aparición de nueva fauna.",
+        "numero": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7257854,
+          40.4234204,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 10 : MANUEL BENITO *por confirmar",
+        "marker-color": "#DD0969",
+        "description": "ARROYOS Y CAUCES HISTÓRICOS DE MADRID, Charla sobre los cauces y arroyos históricos en la conformación de la ciudad de Madrid.",
+        "numero": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7583638,
+          40.4944545,
+          0
+        ]
+      },
+      "properties": {
+        "name": "PUNTO 2 : CONFEDERACIÓN HIDROGRÁFICA DEL TAJO",
+        "marker-color": "#DD0969",
+        "description": "Zona de Restauración fluvial del río Manzanares en El Pardo por la Confederación Hidrográfica del Tajo. Proyecto de reapertura de las márgenes del río en esta zona, que hoy se encuentran apropiados por clubes privados.",
+        "numero": 2
+      }
+    }
+  ]
 }
