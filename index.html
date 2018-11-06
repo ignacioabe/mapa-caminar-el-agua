@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8' />
+    <meta charset="utf-8" />
     <title>Caminar el agua, ruta río Manzanares norte</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css" rel="stylesheet" />
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
 
         .mapboxgl-popup {
         max-width: 400px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
         }
         
         .marker {
-        background-image: url('mapbox-icon.png');
+        background-image: url("mapbox-icon.png");
         background-size: cover;
         width: 50px;
         height: 50px;
@@ -28,13 +28,14 @@
 </head>
 <body>
 
-<div id='map'></div>
+<div id="map"></div>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiaWduYWNpb2FiZSIsImEiOiJsTDV0dWFJIn0.Og513NMky_08_sXUUDsrbA';
+
+mapboxgl.accessToken = "pk.eyJ1IjoiaWduYWNpb2FiZSIsImEiOiJsTDV0dWFJIn0.Og513NMky_08_sXUUDsrbA";
 
 var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/ignacioabe/cjnscz0aa0fud2slrii5vrocj',
+    container: "map",
+    style: "mapbox://styles/ignacioabe/cjnscz0aa0fud2slrii5vrocj",
     center: [-3.7441921, 40.4500822], //ubicación: Madrid, España
     zoom: 13
 });
@@ -47,13 +48,13 @@ map.addControl(fulls, "top-left");
 
 var scale = new mapboxgl.ScaleControl({
     maxWidth: 80,
-    unit: 'metric'
+    unit: "metric"
 });
 map.addControl(scale, "bottom-left");
 
 var nav = new mapboxgl.NavigationControl();
 
-map.addControl(nav, 'top-left');
+map.addControl(nav, "top-left");
 
 var geoloc = new mapboxgl.GeolocateControl({
     positionOptions: {
@@ -64,9 +65,9 @@ var geoloc = new mapboxgl.GeolocateControl({
 
 map.addControl(geoloc, "top-left");
 
-map.on('load', function () {
+map.on("load", function () {
 
-    map.addSource('recorrido', { type: 'geojson', data: "./ruta-1-senderos.geojson" });
+    map.addSource("recorrido", { type: "geojson", data: "./ruta-1-senderos.geojson" });
     map.addLayer({
         "id": "recorrido",
         "type": "line",
@@ -76,13 +77,13 @@ map.on('load', function () {
             "line-cap": "round"
         },
         "paint": {
-            "line-color": "#a00",
-            "line-width": 2,
+            "line-color": "#C93333",
+            "line-width": 3,
             "line-opacity": 0.8
         }
     });
 
-    map.addSource('puntos', { type: 'geojson', data: "./ruta-1-puntos.geojson" });
+    map.addSource("puntos", { type: "geojson", data: "./ruta-1-puntos.geojson" });
     map.addLayer({
         "id": "puntos",
         "type": "circle",
@@ -92,15 +93,22 @@ map.on('load', function () {
             // "icon-allow-overlap": true
         },
         "paint": {
-            'circle-radius': 8,
-            'circle-color': '#a00',
-            'circle-opacity': 0.75
+            "circle-radius": 8,
+            'circle-color': {'type': 'identity', 'property': 'marker-color'},
+            "circle-opacity": 1,
+            "circle-stroke-color": "#fff",
+            "circle-stroke-width": 2,
+            "circle-stroke-opacity": 1
         }
     });
 
+    /*
+    colocar aquí una nueva capa con íconos o letras!
+    */
+
     // When a click event occurs on a feature in the puntos layer, open a popup at the
     // location of the feature, with description HTML from its properties._
-    map.on('click', 'puntos', function (e) {
+    map.on("click", "puntos", function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
         var name = e.features[0].properties.name;
@@ -119,14 +127,19 @@ map.on('load', function () {
     });
 
     // Change the cursor to a pointer when the mouse is over the puntos layer.
-    map.on('mouseenter', 'puntos', function () {
-        map.getCanvas().style.cursor = 'pointer';
+    map.on("mouseenter", "puntos", function () {
+        map.getCanvas().style.cursor = "pointer";
     });
 
     // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'puntos', function () {
-        map.getCanvas().style.cursor = '';
+    map.on("mouseleave", "puntos", function () {
+        map.getCanvas().style.cursor = "";
     });
+
+    // Esto es para encuadrar el país independiente del tamaño del mapa en pixeles.
+    let siria = [[-3.7734603881835938,40.41323464818589],[-3.7108039855957027,40.50753459933616]]
+    map.fitBounds(siria, {speed: 0.075});
+
 });
 </script>
 
