@@ -35,7 +35,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoiaWduYWNpb2FiZSIsImEiOiJsTDV0dWFJIn0.Og513NMky
 
 var map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/ignacioabe/cjnscz0aa0fud2slrii5vrocj",
+    style: "mapbox://styles/ignacioabe/cjnscm984094i2roaolbhgycb",
     center: [-3.7441921, 40.4500822], //ubicación: Madrid, España
     zoom: 13
 });
@@ -84,8 +84,9 @@ map.on("load", function () {
     });
 
     map.addSource("puntos", { type: "geojson", data: "./ruta-1-puntos.geojson" });
+
     map.addLayer({
-        "id": "puntos",
+        "id": "circulos",
         "type": "circle",
         "source": "puntos",
         "layout": {
@@ -93,7 +94,7 @@ map.on("load", function () {
             // "icon-allow-overlap": true
         },
         "paint": {
-            "circle-radius": 8,
+            "circle-radius": 10,
             'circle-color': {'type': 'identity', 'property': 'marker-color'},
             "circle-opacity": 1,
             "circle-stroke-color": "#fff",
@@ -101,14 +102,27 @@ map.on("load", function () {
             "circle-stroke-opacity": 1
         }
     });
+        //capa para etiquetas
+        map.addLayer({
+        "id": "numeros",
+        "type": "symbol",
+        "source": "puntos",
+        "layout": {
+            "text-field": "{numero}",
+            "text-size": 14,
+            "text-offset": [0, 0.1],
+            "text-font": ["League Mono Bold"]
 
-    /*
-    colocar aquí una nueva capa con íconos o letras!
-    */
+        },
+        "paint": {
+            "text-color": "#fff"
+        }
+    });
+
 
     // When a click event occurs on a feature in the puntos layer, open a popup at the
     // location of the feature, with description HTML from its properties._
-    map.on("click", "puntos", function (e) {
+    map.on("click", "circulos", function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
         var name = e.features[0].properties.name;
@@ -127,20 +141,22 @@ map.on("load", function () {
     });
 
     // Change the cursor to a pointer when the mouse is over the puntos layer.
-    map.on("mouseenter", "puntos", function () {
+    map.on("mouseenter", "circulos", function () {
         map.getCanvas().style.cursor = "pointer";
     });
 
     // Change it back to a pointer when it leaves.
-    map.on("mouseleave", "puntos", function () {
+    map.on("mouseleave", "circulos", function () {
         map.getCanvas().style.cursor = "";
     });
 
     // Esto es para encuadrar el país independiente del tamaño del mapa en pixeles.
-    let siria = [[-3.7734603881835938,40.41323464818589],[-3.7108039855957027,40.50753459933616]]
-    map.fitBounds(siria, {speed: 0.075});
+    let encuadre = [[-3.773, 40.410], [-3.710, 40.507]]
+    map.fitBounds(encuadre, {speed: 0.075});
 
 });
+
+
 </script>
 
 </body>
