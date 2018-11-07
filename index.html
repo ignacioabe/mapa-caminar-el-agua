@@ -74,7 +74,7 @@ map.on("load", function () {
         "source": "recorrido",
         "layout": {
             "line-join": "round",
-            "line-cap": "round"
+            "line-cap": "round",
         },
         "paint": {
             "line-color": "#C93333",
@@ -107,12 +107,13 @@ map.on("load", function () {
         "id": "numeros",
         "type": "symbol",
         "source": "puntos",
+        "minzoom": 11,
         "layout": {
             "text-field": "{numero}",
             "text-size": 14,
             "text-offset": [0, 0.1],
-            "text-font": ["League Mono Bold"]
-
+            "text-font": ["League Mono Bold"],
+            "text-allow-overlap": true
         },
         "paint": {
             "text-color": "#fff"
